@@ -1,10 +1,10 @@
 {
-  "name": "telegram-bot-vercel-boilerplate",
-  "version": "1.1.0",
-  "description": "Telegram Bot Vercel Boilerplate",
+  "name": "openboba-bot",
+  "version": "0.1",
+  "description": "Open Boba Bot (openboba.shop)",
   "main": "src/index.ts",
-  "author": "Mark Pavlov (https://github.com/m7mark)",
-  "homepage": "https://github.com/m7mark/telegram-bot-vercel-boilerplate",
+  "author": "Boba Bagus (https://openboba.shop)",
+  "homepage": "https://openboba.shop",
   "dependencies": {
     "@vercel/node": "^2.6.3",
     "dotenv-cli": "^6.0.0",

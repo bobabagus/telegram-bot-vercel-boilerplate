@@ -8,12 +8,12 @@ const BOT_TOKEN = process.env.BOT_TOKEN || '';
 const ENVIRONMENT = process.env.NODE_ENV || '';
 
 const bot = new Telegraf(BOT_TOKEN);
-const userName = `${ctx.message?.from.first_name} ${ctx.message?.from.last_name}`;
 bot.start((ctx) => ctx.reply('Welcome'));
 bot.help((ctx) => ctx.reply('Send me a sticker'));
 bot.on(message('sticker'), (ctx) => ctx.reply('👍'));
 bot.on(message('text'), async (ctx) => {
   // Using context shortcut
+  const userName = `${ctx.message?.from.first_name} ${ctx.message?.from.last_name}`;
   await ctx.reply(`Hello ${userName}`);
 });
 bot.command('about', about());

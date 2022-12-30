@@ -14,7 +14,7 @@ bot.on(message('sticker'), (ctx) => ctx.reply('👍'));
 bot.on(message('text'), async (ctx) => {
   // Using context shortcut
   const userName = `${ctx.message?.from.first_name} ${ctx.message?.from.last_name}`;
-  await ctx.reply(`Hello ${userName}`);
+  await ctx.reply(`Hello ${userName} ${ctx.message?.text} ${ctx.message?.caption}`);
 });
 bot.command('about', about());
 bot.hears('hi', (ctx) => ctx.reply('Hey there'));

@@ -18,13 +18,13 @@ const greeting = () => async (ctx: Context) => {
   const msgs = objs2.text;
   let splitLine = msgs.split(`\n`);
   let postObject:any = {}
-  let thePost = `${JSON.stringify(postObject)}`
   splitLine.forEach((line: any) => {
     let pairs = line.split(': ')
     postObject[pairs[0]] = pairs[1]??'empty'
   });
+  let thePost = `${JSON.stringify(postObject)}`
   if (messageId ) {
-    await replyToMessage(ctx, messageId, `${splitLine[0]}`);
+    await replyToMessage(ctx, messageId, `${thePost}`);
   }
 };
 

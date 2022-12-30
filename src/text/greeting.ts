@@ -23,6 +23,8 @@ const greeting = () => async (ctx: Context) => {
     let keyval: any = ar.split(': ')
     if (keyval[1]) {
       postObjects[keyval[0]] = keyval[1]
+    } else {
+      postObjects = false
     }
   })
   let thepost: any = `[${postObjects?.name}](${postObjects?.link})
@@ -37,8 +39,10 @@ Buat yg Error Silahkan Pakai Cloudflare, APP nya bisa download di : https://1.1.
 
 Visit New Web : https://openboba.shop
 Link Rusak atau mati silahkan comment`
-  if (messageId) {
-    await replyToMessage(ctx, messageId, `hello ${userName} ${thepost}`);
+  if (messageId && postObjects) {
+    await replyToMessage(ctx, messageId, `${thepost}`);
+  } else {
+    await replyToMessage(ctx, messageId, `hello ${userName}`);
   }
 };
 

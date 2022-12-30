@@ -14,17 +14,17 @@ const greeting = () => async (ctx: Context) => {
   const messageId = ctx.message?.message_id;
   const userName = `${ctx.message?.from.first_name} ${ctx.message?.from.last_name}`;
   const objs = JSON.stringify(ctx.message);
-  const objs2 = JSON.parse(objs)
-  const msgs = objs2.text
-  const password = 'Bobabagus'
-  let arr = msgs.split('\n')
-  let postObjects: any = {}
+  const objs2 = JSON.parse(objs);
+  const msgs = objs2.text;
+  const password = 'Bobabagus';
+  let arr = msgs.split('\n');
+  let postObjects: any = {};
   arr.forEach((ar: any, ari: any) => {
-    let keyval: any = ar.split(': ')
+    let keyval: any = ar.split(': ');
     if (keyval[1]) {
-      postObjects[keyval[0]] = keyval[1]
+      postObjects[keyval[0]] = keyval[1];
     } else {
-      postObjects = false
+      postObjects['name'] = 'empty';
     }
   })
   let thepost: any = `[${postObjects?.name}](${postObjects?.link})
@@ -38,7 +38,7 @@ Password: ${password}
 Buat yg Error Silahkan Pakai Cloudflare, APP nya bisa download di : https://1.1.1.1/
 
 Visit New Web : https://openboba.shop
-Link Rusak atau mati silahkan comment`
+Link Rusak atau mati silahkan comment`;
   if (messageId && postObjects) {
     await replyToMessage(ctx, messageId, `${thepost}`);
   } else {

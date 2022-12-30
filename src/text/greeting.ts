@@ -17,7 +17,7 @@ const greeting = () => async (ctx: Context) => {
   const objs2 = JSON.parse(objs)
   const message = objs2.text
   let arr = message.split('\n')
-  let obj = {}
+  let obj: any = {}
   arr.forEach((ar, ari) => {
     let keyval = ar.split(': ')
     if (keyval[1]) {

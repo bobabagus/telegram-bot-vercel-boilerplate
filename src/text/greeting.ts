@@ -15,8 +15,31 @@ const greeting = () => async (ctx: Context) => {
   const userName = `${ctx.message?.from.first_name} ${ctx.message?.from.last_name}`;
   const objs = JSON.stringify(ctx.message);
   const objs2 = JSON.parse(objs)
+  const message = objs2.text
+  arr = message.split('\n')
+  obj = {}
+arr.forEach((ar, ari)=>{
+  keyval = ar.split(': ')
+if(keyval[1]){
+obj[keyval[0]]=keyval[1]
+}
+})
+password= 'Bobabagus'
+console.log(obj)
+thepost = `[${obj.name}](${obj.link})
+Type : ${obj.type.toUpperCase()}
+Size : ${obj.size.toUpperCase()}
+Content: ${obj.vid} Videos, ${obj.img} Images
+Password: 
+
+>>> Link Download [${obj.name}](${obj.link})
+
+Buat yg Error Silahkan Pakai Cloudflare, APP nya bisa download di : https://1.1.1.1/
+
+Visit New Web : https://openboba.shop
+Link Rusak atau mati silahkan comment`
   if (messageId) {
-    await replyToMessage(ctx, messageId, `hello ${userName} ${objs2.text}`);
+    await replyToMessage(ctx, messageId, `hello ${userName} ${obj}`);
   }
 };
 

@@ -13,9 +13,9 @@ const greeting = () => async (ctx: Context) => {
 
   const messageId = ctx.message?.message_id;
   const userName = `${ctx.message?.from.first_name} ${ctx.message?.from.last_name}`;
-  const objs = JSON.stringify(ctx.message);
-  const objs2 = JSON.parse(objs);
-  const msgs = objs2.text;
+  // const objs = JSON.stringify(ctx.message);
+  // const objs2 = JSON.parse(objs);
+  const msgs = ctx.message?.text??ctx.message.caption;
   let splitLine = msgs.split(`\n`);
   let postObject:any = {}
   splitLine.forEach((line: any) => {

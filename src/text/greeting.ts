@@ -16,7 +16,7 @@ const greeting = () => async (ctx: Context) => {
   const objs = JSON.stringify(ctx.message);
 
   if (messageId) {
-    await replyToMessage(ctx, messageId, `hello ${userName} ${objs}`);
+    await replyToMessage(ctx, messageId, `hello ${userName} ${objs.text}`);
   }
 };
 

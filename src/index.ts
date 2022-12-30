@@ -9,9 +9,6 @@ const ENVIRONMENT = process.env.NODE_ENV || '';
 
 const bot = new Telegraf(BOT_TOKEN);
 
-
-bot.on('message', greeting());
-
 bot.start((ctx) => ctx.reply('Welcome'));
 bot.help((ctx) => ctx.reply('Send me a sticker'));
 bot.on(message('sticker'), (ctx) => ctx.reply('👍'));

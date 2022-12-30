@@ -22,7 +22,14 @@ const greeting = () => async (ctx: Context) => {
     let pairs = line.split(': ')
     postObject[pairs[0]] = pairs[1]??'empty'
   });
-  let thePost = `${JSON.stringify(postObject)}`
+  let footerText = `\nBuat yg Error Silahkan Pakai Cloudflare, APP nya bisa download di : https://1.1.1.1/\n\nVisit New Web : https://openboba.shop
+Link Rusak atau mati silahkan comment`
+let thePost = ``
+Object.entries(postObject).map((entry) => {
+  const [key, value] = entry;
+  thePost += `${key}: ${value}\n`
+})
+thePost += footerText
   if (messageId ) {
     await replyToMessage(ctx, messageId, `${thePost}`);
   }

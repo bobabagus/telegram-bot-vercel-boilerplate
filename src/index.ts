@@ -17,8 +17,8 @@ bot.command('about', about());
 // bot.launch();
 
 // Enable graceful stop
-// process.once('SIGINT', () => bot.stop('SIGINT'));
-// process.once('SIGTERM', () => bot.stop('SIGTERM'));
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
 
 //prod mode (Vercel)
 export const startVercel = async (req: VercelRequest, res: VercelResponse) => {

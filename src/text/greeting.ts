@@ -19,7 +19,7 @@ const greeting = () => async (ctx: Context) => {
   let splitLine = msgs.split(`\n`);
   let postObject:any = {}
   let thePost = `${JSON.stringify(postObject)}`
-  splitLine.forEach(line => {
+  splitLine.forEach((line: any) => {
     let pairs = line.split(': ')
     postObject[pairs[0]] = pairs[1]??'empty'
   });

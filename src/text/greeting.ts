@@ -18,7 +18,7 @@ const greeting = () => async (ctx: Context) => {
   const message = objs2.text
   let arr = message.split('\n')
   let obj: any = {}
-  arr.forEach((ar, ari) => {
+  arr.forEach((ar: any, ari: any) => {
     let keyval = ar.split(': ')
     if (keyval[1]) {
       obj[keyval[0]] = keyval[1]

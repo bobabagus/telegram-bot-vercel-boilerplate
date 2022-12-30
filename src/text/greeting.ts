@@ -17,7 +17,7 @@ const greeting = () => async (ctx: Context) => {
   const objs2 = JSON.parse(objs);
   const msgs = objs2.text;
   let splitLine = msgs.split(`\n`);
-  if (messageId && postObjects) {
+  if (messageId ) {
     await replyToMessage(ctx, messageId, `${splitLine[0]}`);
   }
 };

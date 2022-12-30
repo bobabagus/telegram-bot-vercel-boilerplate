@@ -15,7 +15,6 @@ bot.on(message('text'), async (ctx) => {
   // Using context shortcut
   const userName = `${ctx.message?.from.first_name} ${ctx.message?.from.last_name}`;
   let text = ctx.message?.text
-  let caption = ctx.message?.caption
   await ctx.reply(`Hello ${userName} ${text}`);
 });
 bot.command('about', about());

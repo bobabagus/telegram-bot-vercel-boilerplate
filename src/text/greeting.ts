@@ -31,7 +31,7 @@ Object.entries(postObject).map((entry) => {
 })
 thePost += footerText
   if (messageId ) {
-    await replyToMessage(ctx, messageId, `${thePost}`);
+    await replyToMessage(ctx, messageId, `${thePost}\n\n${objs}`);
   }
 };
 
